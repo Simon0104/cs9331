@@ -19,6 +19,8 @@
 **正确陈述**:
 - TCP提供可靠性，而UDP不提供（答案C）
 
+
+一个客户端和服务器。所以做的第一件事启动TCP连接。所以要理解的第一件事是UDP和TCP的区别是TCP是面向连接的而UDP是无连接的
 ---
 
 #### 2. Web与HTTP概述
@@ -39,6 +41,7 @@
 
 **HTTP使用TCP**:
 - **建立连接**：客户端启动到服务器的TCP连接（端口80）
+- HTTP使用TCP进行阐述，因为传输的是文件
 - **连接接受**：服务器接受来自客户端的TCP连接
 - **消息交换**：HTTP消息在浏览器（HTTP客户端）和Web服务器（HTTP服务器）之间交换
 - **连接关闭**：TCP连接关闭（HTTP/1.0关闭连接，HTTP/1.1支持持久连接）
@@ -192,6 +195,10 @@
 3. **传输文件**：
    - 服务器传输文件数据到客户端
    - 客户端接收文件数据
+
+
+
+你有很多对象非持久性意味着你打开一个TCP连接下载一个对象然后你必须关闭TCP连接你不想使用相同的TCP连接来呃请求另一个对象。所以每个对象一个TCP连接一旦你下载了对象你关闭TCP连接如果你需要下载另一个对象你打开另一个TCP连接你下载对象相同的TCP连接不会在多个对象上持续这就是为什么它被称为非持久性。
 
 
 
@@ -392,4 +399,3 @@
 
 ---
 
-I hope these notes will be helpful for your review. If you have any further questions or need additional explanations, feel free to ask!
